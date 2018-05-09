@@ -20,22 +20,22 @@ class Game {
     protected:
         Arena *arena;
         Player *players;
+        Player *currentPlayer;
         int playerCount;
     
     public:
-        Game() {}
+        Game();
 
-        void setPlayerCount(int count) {
-            this->playerCount = count;
-        }
-        int getPlayerCount() {
-            return this->playerCount;
-        }
+        void setCurrentPlayer(Player *player);
+        Player *getCurrentPlayer();
 
-        void Play() {}
-        void Display() const {};
+        void setPlayerCount(int count);
+        int getPlayerCount();
+
+        void Play();
+        void Display() const;
         
-        ~Game(){}
+        ~Game();
 };
 
 #endif // __GAME_H

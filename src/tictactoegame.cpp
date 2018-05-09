@@ -25,7 +25,7 @@ TicTacToeGame::TicTacToeGame() {
     this->playerCount = MAX_PLAYERS;
 
     /* init the players */
-    this->players = new Player[2];
+    this->players = new Player[MAX_PLAYERS];
 
     (this->players+0)->setType(PLAYER_HUMAN);
     (this->players+0)->setSymbol(PLAYER_CROSS);
