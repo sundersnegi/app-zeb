@@ -1,20 +1,21 @@
 /**
  * @file tictactoeboard.cpp
- * 
+ *
  * @brief Defines the tictactoe 3x3 board
  */
 
 #include <iostream>
 #include <cstdio>
 
+#include "common.h"
 #include "move.h"
 #include "player.h"
-#include "tictactoeboard.h"
+#include "tictactoe/tictactoeboard.h"
 
 using namespace std;
 using namespace tictactoe;
 
-TicTacToeBoard::TicTacToeBoard() {
+tictactoe::TicTacToeBoard::TicTacToeBoard() {
     /* init all to 0 */
     for (int r = 0; r < DEGREE; r++) {
         for (int c = 0; c < DEGREE; c++) {
@@ -26,7 +27,7 @@ TicTacToeBoard::TicTacToeBoard() {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-PlayerSymbol TicTacToeBoard::getValueAt(int row, int col) const {
+PlayerSymbol tictactoe::TicTacToeBoard::getValueAt(int row, int col) const {
     /* verify row col */
     if ((row < 0 || row >= DEGREE) 
         || (col < 0 || col >= DEGREE)) {
@@ -38,12 +39,12 @@ PlayerSymbol TicTacToeBoard::getValueAt(int row, int col) const {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-int TicTacToeBoard::getCellsRemaining() const {
+int tictactoe::TicTacToeBoard::getCellsRemaining() const {
     return this->cellsRemaining;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-int TicTacToeBoard::MakeMove(Move *move, Player *player) {
+int tictactoe::TicTacToeBoard::MakeMove(Move *move, Player *player) {
     /* verify input */
     if (NULL == move || NULL == player) {
         cout << __func__ << ": Error: invalid input" << endl;
@@ -77,7 +78,7 @@ int TicTacToeBoard::MakeMove(Move *move, Player *player) {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-void TicTacToeBoard::ResetMove(Move *move) {
+void tictactoe::TicTacToeBoard::ResetMove(Move *move) {
     /* verify input */
     if (NULL == move) {
         cout << __func__ << ": Error: invalid input" << endl;
@@ -91,7 +92,7 @@ void TicTacToeBoard::ResetMove(Move *move) {
     this->ResetMove(row, col);
 }
 
-void TicTacToeBoard::ResetMove(int row, int col) {
+void tictactoe::TicTacToeBoard::ResetMove(int row, int col) {
 
         if ((row < 0 || row >= DEGREE)
         || (col < 0 || col >= DEGREE)) {
@@ -107,7 +108,7 @@ void TicTacToeBoard::ResetMove(int row, int col) {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-list<Move> TicTacToeBoard::ListMoves() const {
+list<Move> tictactoe::TicTacToeBoard::ListMoves() const {
 	list<Move> moves;
 	Move move;
 
@@ -131,7 +132,7 @@ list<Move> TicTacToeBoard::ListMoves() const {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-list<Move> TicTacToeBoard::ListMoves(Move start) const {
+list<Move> tictactoe::TicTacToeBoard::ListMoves(Move start) const {
 	list<Move> moves; //= new list<int[2]>;
 	Move move;
 	int row = start.getRow();
@@ -191,7 +192,7 @@ list<Move> TicTacToeBoard::ListMoves(Move start) const {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-void TicTacToeBoard::Display() const {
+void tictactoe::TicTacToeBoard::Display() const {
     cout << "\n+---+---+---+" << endl;
     for (int r = 0; r < DEGREE; r++) {
         cout << "| ";
@@ -205,7 +206,7 @@ void TicTacToeBoard::Display() const {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-TicTacToeBoard::~TicTacToeBoard() {
+tictactoe::TicTacToeBoard::~TicTacToeBoard() {
     /* empty */
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

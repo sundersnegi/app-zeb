@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "tictactoegame.h"
+#include "tictactoe/tictactoegame.h"
 
 using namespace std;
 

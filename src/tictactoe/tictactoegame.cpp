@@ -1,6 +1,6 @@
 /**
  * @file tictactoegame.cpp
- * 
+ *
  * @brief Implementation file for TicTacToe Game
  */
 
@@ -8,17 +8,18 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include "common.h"
 #include "game.h"
 #include "move.h"
 #include "player.h"
 #include "arena.h"
-#include "tictactoe.h"
-#include "tictactoegame.h"
-#include "tictactoeboard.h"
+#include "tictactoe/tictactoe.h"
+#include "tictactoe/tictactoegame.h"
+#include "tictactoe/tictactoeboard.h"
 
 using namespace std;
 
-TicTacToeGame::TicTacToeGame() {
+tictactoe::TicTacToeGame::TicTacToeGame() {
     this->arena = new TicTacToeBoard();
     this->arena->setGame(this);
 
@@ -37,7 +38,7 @@ TicTacToeGame::TicTacToeGame() {
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-void TicTacToeGame::Display() const {
+void tictactoe::TicTacToeGame::Display() const {
     (void)system("clear");
 
     cout << "++++++ T I C T A C T O E ++++++" << endl
@@ -51,7 +52,7 @@ void TicTacToeGame::Display() const {
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-void TicTacToeGame::Play() {
+void tictactoe::TicTacToeGame::Play() {
     int turn = 0; /* first player to make first move */
     enum State gamestate = PLAY;
 
@@ -137,7 +138,7 @@ again:
  * |     |
  * +---
  */
-int TicTacToeGame::Evaluate() {
+int tictactoe::TicTacToeGame::Evaluate() {
     enum State gamestate = DRAW;
     bool cellempty;
     int SL;
@@ -187,7 +188,7 @@ int TicTacToeGame::Evaluate() {
     return (int)gamestate;
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-bool TicTacToeGame::IsSolvable() {
+bool tictactoe::TicTacToeGame::IsSolvable() {
     TicTacToeBoard *board = dynamic_cast<TicTacToeBoard*>(this->arena);
     bool terminal = false;
 
@@ -226,7 +227,7 @@ bool TicTacToeGame::IsSolvable() {
 
 static int total_moves = 0;
 
-bool TicTacToeGame::issolvable(TicTacToeBoard *board, int depth, int turn) {
+bool tictactoe::TicTacToeGame::issolvable(TicTacToeBoard *board, int depth, int turn) {
     if (!depth)
         return 0;
 
@@ -331,7 +332,7 @@ bool TicTacToeGame::issolvable(TicTacToeBoard *board, int depth, int turn) {
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-TicTacToeGame::~TicTacToeGame() {
+tictactoe::TicTacToeGame::~TicTacToeGame() {
     if (this->players) {
         delete[] this->players;
     }

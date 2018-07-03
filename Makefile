@@ -2,8 +2,8 @@ INCDIR=./include
 SRCDIR=./src
 CXXFLAGS = -O2 -g -Wall -DDEBUG -fmessage-length=0 -I$(INCDIR)
 #CXXFLAGS = -O2 -g -Wall -fmessage-length=0 -I$(INCDIR)
-OBJS = $(SRCDIR)/player.o  $(SRCDIR)/tictactoeboard.o \
-	   $(SRCDIR)/tictactoegame.o $(SRCDIR)/move.o tttgame.o
+OBJS = $(SRCDIR)/player.o  $(SRCDIR)/tictactoe/tictactoeboard.o \
+	   $(SRCDIR)/tictactoe/tictactoegame.o $(SRCDIR)/move.o tttgame.o
 LIBS =
 TARGET = tttgame
 

@@ -9,7 +9,8 @@
 
 #include "move.h"
 #include "arena.h"
-#include "tictactoe.h"
+#include "common.h"
+#include "tictactoe/tictactoe.h"
 
 /* forward declaration */
 class Game;

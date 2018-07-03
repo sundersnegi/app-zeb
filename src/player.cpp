@@ -10,7 +10,8 @@
 #include "move.h"
 #include "player.h"
 #include "game.h"
-#include "tictactoe.h"
+#include "common.h"
+#include "tictactoe/tictactoe.h"
 
 using namespace std;
 using namespace tictactoe;
