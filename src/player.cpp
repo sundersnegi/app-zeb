@@ -1,11 +1,7 @@
 /**
  * @file player.cpp
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Implementation of player
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #include <iostream>

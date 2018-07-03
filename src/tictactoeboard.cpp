@@ -1,11 +1,7 @@
 /**
  * @file tictactoeboard.cpp
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Defines the tictactoe 3x3 board
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #include <iostream>

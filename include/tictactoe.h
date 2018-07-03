@@ -1,11 +1,7 @@
 /**
  * @file tictactoe.h
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Header file for TicTacToe
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #ifndef __TICTACTOE_H

@@ -1,11 +1,7 @@
 /**
  * @file tictactoegame.cpp
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Implementation file for TicTacToe Game
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #include <iostream>

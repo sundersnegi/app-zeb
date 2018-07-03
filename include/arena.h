@@ -1,14 +1,10 @@
 /**
  * @file arena.h
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Header file for Arena
  * 
  * Arena is the space where the game is played. For example, for TicTacToe it
  * is a 3x3 board.
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #ifndef __ARENA_H

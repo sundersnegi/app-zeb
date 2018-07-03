@@ -1,11 +1,7 @@
 /**
  * @file player.h
- * @author augustronics@gmail.com
- * @date 06 May 2018
  * 
  * @brief Game player
- * 
- * Copyright (c) 2018, augustronics@gmail.com
  */
 
 #ifndef __PLAYER_H
