@@ -14,13 +14,18 @@
 
 using namespace std;
 
+/* forward declarations */
 class Move;
 class Player;
+class Game;
 
 /**
  * @brief Arena abstract class
  */
 class Arena {
+    private:
+        Game *game;
+
     public:
         /**
          * @func Display
@@ -58,10 +63,18 @@ class Arena {
          */
         virtual void ResetMove(int row, int col) = 0;
 
-        virtual ~Arena() = 0;
-};
+        void setGame(Game *game) {
+            this->game = game;
+        }
 
-inline Arena::~Arena() {}
+        Game *getGame() {
+            return this->game;
+        }
+
+        virtual ~Arena() {
+            this->game = NULL;
+        };
+};
 
 #endif // __ARENA_H
 /* EOF */

@@ -9,6 +9,7 @@
 
 #include "move.h"
 #include "player.h"
+#include "game.h"
 #include "tictactoe.h"
 
 using namespace std;
@@ -19,7 +20,7 @@ Player::Player() {
     this->type  = PLAYER_HUMAN;
     this->symbol = PLAYER_CROSS;
 
-    this->arena = NULL;
+    this->game = NULL;
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -41,17 +42,17 @@ void Player::setSymbol(PlayerSymbol symbol) {
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-Arena *Player::getArena() {
-    return this->arena;
+Game *Player::getGame() {
+    return this->game;
 }
 
-void Player::setArena(Arena *arena) {
-    if (NULL == arena) {
+void Player::setGame(Game *game) {
+    if (NULL == game) {
         cout << __func__ << ": Error: invalid parameter" << endl;
         exit(0);
     }
 
-    this->arena = arena;
+    this->game = game;
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -59,7 +60,7 @@ void Player::makemove(int row, int col) {
     Move *move = new Move(row, col);
     
     /* present move to the arena */
-    this->arena->MakeMove(move, this);
+    this->game->getArena()->MakeMove(move, this);
 
     delete move;
 }
@@ -67,8 +68,8 @@ void Player::makemove(int row, int col) {
 
 void Player::MakeMove(int row, int col) {
     /* check for player arena */
-    if (NULL == this->arena) {
-        cout << __func__ << ": Error: no arena to move." << endl;
+    if (NULL == this->game) {
+        cout << __func__ << ": Error: no game to play." << endl;
         return;
     }
 
@@ -83,7 +84,7 @@ void Player::MakeMove(Arena *arena, int row, int col) {
         return;
     }
 
-    this->setArena(arena);
+    this->game->setArena(arena);
 
     this->makemove(row, col);
 }
@@ -91,6 +92,6 @@ void Player::MakeMove(Arena *arena, int row, int col) {
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 Player::~Player() {
-    this->arena = NULL;
+    this->game = NULL;
 }
 /* EOF */

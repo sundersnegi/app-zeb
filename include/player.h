@@ -11,6 +11,10 @@
 #include "arena.h"
 #include "tictactoe.h"
 
+/* forward declaration */
+class Game;
+class Arena;
+
 using namespace tictactoe;
 
 /**
@@ -21,7 +25,7 @@ class Player {
     private:
         enum PlayerType type;
         enum PlayerSymbol symbol;
-        Arena *arena;
+        Game *game;
 
         void makemove(int row, int col); /* worker function */
 
@@ -35,8 +39,8 @@ class Player {
         PlayerSymbol getSymbol();
         void setSymbol(PlayerSymbol symbol);
 
-        Arena *getArena();
-        void setArena(Arena *arena);
+        Game *getGame();
+        void setGame(Game *game);
 
         void MakeMove(int row, int col);
         void MakeMove(Arena *arena, int row, int col);

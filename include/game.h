@@ -24,11 +24,20 @@ class Game {
         void setPlayerCount(int count) {
             this->playerCount = count;
         }
+
         int getPlayerCount() {
             return this->playerCount;
         }
 
-        void Play() {}
+        void setArena(Arena *arena) { 
+            this->arena = arena;
+        }
+
+        Arena *getArena() {
+            return this->arena;
+        }
+
+        virtual void Play() = 0;
 
         /**
          * @func Evaluate
@@ -36,9 +45,7 @@ class Game {
          *
          * Evaluates whether the game ended in a RESULT/DRAW or still some moves could be made.
          */
-        virtual int Evaluate() {
-            return 1;
-        }
+        virtual int Evaluate() = 0;
 
         /**
          * @func isSolvable()
@@ -49,13 +56,11 @@ class Game {
          * @returns true if game could produce a winner
          *          false if the game would end in a draw
          */
-        virtual bool IsSolvable() {
-            return true;
-        }
+        virtual bool IsSolvable() = 0;
 
-        void Display() const {};
+        virtual void Display() const = 0;
         
-        virtual ~Game(){}
+        virtual ~Game() {}
 };
 
 #endif // __GAME_H

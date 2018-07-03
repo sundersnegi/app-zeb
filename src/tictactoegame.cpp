@@ -20,6 +20,8 @@ using namespace std;
 
 TicTacToeGame::TicTacToeGame() {
     this->arena = new TicTacToeBoard();
+    this->arena->setGame(this);
+
     this->playerCount = MAX_PLAYERS;
 
     /* init the players */
@@ -27,8 +29,11 @@ TicTacToeGame::TicTacToeGame() {
 
     (this->players+0)->setType(PLAYER_HUMAN);
     (this->players+0)->setSymbol(PLAYER_CROSS);
+    (this->players+0)->setGame(this);
+
     (this->players+1)->setType(PLAYER_COMPUTER);
     (this->players+1)->setSymbol(PLAYER_CIRCLE);
+    (this->players+1)->setGame(this);
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 

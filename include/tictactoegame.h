@@ -14,7 +14,7 @@ class TicTacToeBoard;
 /**
  * @brief The TicTacToe class
  */
-class TicTacToeGame : virtual public Game {
+class TicTacToeGame : public Game {
     private:
 
         /**
